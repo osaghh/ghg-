@@ -1,0 +1,9 @@
+---
+
+## 🎨 TailwindCSS Setup
+
+In `frontend/`:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p

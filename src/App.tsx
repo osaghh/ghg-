@@ -22,25 +22,27 @@ function App() {
   const [result, setResult] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleDownload = async () => {
-    setLoading(true);
-    setResult(null);
-    try {
-      const res = await fetch('https://gqfmokuvggwgvqycdhdp.supabase.co/functions/v1/rapid-processor>', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
-      });
+const handleDownload = async () => {
+  setLoading(true);
+  setResult(null);
+  try {
+    const res = await fetch('https://gqfmokuvggwgvqycdhdp.supabase.co/functions/v1/rapid-processor', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR_SUPABASE_ANON_KEY'
+      },
+      body: JSON.stringify({ url }),
+    });
 
-      const data = await res.json();
-      setResult(data);
-    } catch (error) {
-      setResult({ success: false, error: 'Failed to fetch media.' });
-    } finally {
-      setLoading(false);
-    }
-  };
-
+    const data = await res.json();
+    setResult(data);
+  } catch (error) {
+    setResult({ success: false, error: 'Failed to fetch media.' });
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
       <h1 className="text-2xl font-bold mb-6">Instagram Content Downloader</h1>

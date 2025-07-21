@@ -30,7 +30,7 @@ const handleDownload = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer YOUR_SUPABASE_ANON_KEY'
+        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxZm1va3V2Z2d3Z3ZxeWNkaGRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwNTYwMjIsImV4cCI6MjA2ODYzMjAyMn0.LU-hTk8NlSe1UyhqS_uKJTZz5ozwOCqT82anKKwzqeE'
       },
       body: JSON.stringify({ url }),
     });

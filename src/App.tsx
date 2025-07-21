@@ -26,7 +26,7 @@ function App() {
     setLoading(true);
     setResult(null);
     try {
-      const res = await fetch('https://<YOUR-EDGE-FUNCTION-URL>', {
+      const res = await fetch('https://gqfmokuvggwgvqycdhdp.supabase.co/functions/v1/rapid-processor>', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
